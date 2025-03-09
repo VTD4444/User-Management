@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "username": "admin12345",
+      "email": "dvtduc12@gmail.com",
+      "password": "123",
+      "id": "3dd8"
+    },
+    {
+      "username": "team00323",
+      "email": "dvtduc@gmail.com",
+      "password": "321",
+      "id": "f214"
+    },
+    {
+      "id": "d3c8",
+      "username": "B22DCPT058",
+      "email": "dv@gmail.com",
+      "password": "123"
+    }
+  ],
+  "posts": [
+    {
+      "id": "4687",
+      "userId": "f214",
+      "title": "123",
+      "content": "321"
+    },
+    {
+      "id": "57fb",
+      "userId": "f214",
+      "title": "ầ",
+      "content": "sà"
+    }
+  ]
+}
