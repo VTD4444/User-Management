@@ -10,7 +10,7 @@ const routes = [
   {
     name: "Home",
     component: Home,
-    path: "/home",
+    path: "/",
   },
   {
     name: "SignUp",
@@ -20,7 +20,7 @@ const routes = [
   {
     name: "Login",
     component: Login,
-    path: "/",
+    path: "/log-in",
   },
   {
     name: "UpdateUser",

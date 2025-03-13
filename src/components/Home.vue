@@ -101,6 +101,10 @@ export default {
     },
     async loadData() {
       let userLogin = JSON.parse(localStorage.getItem("userLogin"));
+      if (!userLogin) {
+        this.$router.push({ name: "Login" });
+        return;
+      }
       let userId = userLogin[0].id;
       let result = await axios.get(
         `https://67cdd65d125cd5af7578f3db.mockapi.io/vtd/posts?userId=${userId}`
@@ -111,7 +115,7 @@ export default {
     },
     searchPosts() {
       // This method is intentionally left blank because the search is handled reactively by the computed property `filteredPosts`
-    }
-  },
-};
+    },
+  }
+}
 </script>
