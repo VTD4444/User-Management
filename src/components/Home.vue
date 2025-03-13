@@ -12,39 +12,41 @@
           Search
         </button>
       </form>
-      <table v-if="posts.length > 0" class="min-w-full divide-y divide-gray-200">
-        <thead class="bg-gray-200">
-          <tr>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Order
-            </th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Title
-            </th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Content
-            </th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Action
-            </th>
-          </tr>
-        </thead>
-        <tbody class="bg-white divide-y divide-gray-200">
-          <tr v-for="(post, index) in filteredPosts" :key="post.id">
-            <td class="px-6 py-4 whitespace-nowrap">{{ index + 1 }}</td>
-            <td class="px-6 py-4 whitespace-nowrap">{{ post.title }}</td>
-            <td class="px-6 py-4 whitespace-nowrap" v-html="formatContent(post.content)"></td>
-            <td class="px-6 py-4 whitespace-nowrap">
-              <button @click="updatePost(post.id)" class="text-yellow-600 hover:text-yellow-900 cursor-pointer">
-                Update
-              </button>
-              <button @click="deletePost(post.id)" class="text-red-600 hover:text-red-900 ml-5 cursor-pointer">
-                Delete
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="overflow-x-auto">
+        <table v-if="posts.length > 0" class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Order
+              </th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Title
+              </th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Content
+              </th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            <tr v-for="(post, index) in filteredPosts" :key="post.id">
+              <td class="px-6 py-4 whitespace-nowrap">{{ index + 1 }}</td>
+              <td class="px-6 py-4 whitespace-nowrap">{{ post.title }}</td>
+              <td class="px-6 py-4 whitespace-nowrap" v-html="formatContent(post.content)"></td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <button @click="updatePost(post.id)" class="text-yellow-600 hover:text-yellow-900 cursor-pointer">
+                  Update
+                </button>
+                <button @click="deletePost(post.id)" class="text-red-600 hover:text-red-900 ml-5 cursor-pointer">
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </template>
